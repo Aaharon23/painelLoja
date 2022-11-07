@@ -1,6 +1,6 @@
 class Produto {
 
-    //CONTRUTOR DO OBJETO     
+    //FUNÇÃO CONSTRUTORA DO OBJETO     
     constructor() {
         this.id = 1;
         this.arrayProduto = []
@@ -8,16 +8,16 @@ class Produto {
 
     };
 
-    //FUNÇÃO  RESPONSALVEL POR SALVAR DADOS CAPTADOS PELA FUNÇÃO #captarDados   
+    //FUNÇÃO RESPONSAVEL POR SALVAR DADOS CAPTADOS PELA FUNÇÃO #captarDados   
     salvar(){
         let produto = this.captarDados();
-        //TRATATIVA PARA SE A FUNÇÃO VALIDAINPUT RETORNAR 'TRUE'
+        //TRATATIVA PARA SE A FUNÇÃO VALIDAINPUT RETORNA 'TRUE'
         if(this.validaInput(produto) == true){
             if(this.editId == null){
-                //acçoes a serem feitas quando usuário preencher os inputs 
+                //açoes a serem feitas quando usuário preencher os inputs 
                 this.adicinar(produto)
             }else{
-                //acçoes a serem feitas quando usuário atualizar os dados
+                //açoes a serem feitas quando usuário atualizar os dados
                 this.atualizar(this.editId, produto)
             }
             }
@@ -31,14 +31,14 @@ class Produto {
 
     };
 
-    //FUNÇÃO RESPONSAL POR CRIAR TABELA DE MANEIRA INTERATIVA NO HTML
+    //FUNÇÃO RESPONSAVEL POR CRIAR TABELA DE MANEIRA INTERATIVA NO HTML
     listaTabela(){
         let tbody = document.querySelector('#tbody');
 
         //TBODY TEM Q VIR LIMPO
         tbody.innerHTML = '';
 
-        // 'FOR' PARA PERCORRER ARRAY DE PRODUTOS E ADICIONAR AS TR E TD
+        // 'FOR' PARA ARRAY DE PRODUTOS E ADICIONAR AS TR E TD
         for(let i = 0; i < this.arrayProduto.length; i++){
             //ADICIONA UMA NOVA LINHA A TODA TR
             let tr = tbody.insertRow();
@@ -49,7 +49,7 @@ class Produto {
             let td_valor = tr.insertCell();
             let td_acoes = tr.insertCell();
 
-            //LINKA TD CRIADA AO VALUE VINDO DA 'captarDados'
+            //LINK TD CRIADA AO VALUE VINDO 'captarDados'
             td_id.innerText = this.arrayProduto[i].id
             td_produto.innerText = this.arrayProduto[i].nome
             td_valor.innerText = this.arrayProduto[i].preco
@@ -77,7 +77,7 @@ class Produto {
 
 
 
-            // evento e acção
+            // evento e ação
             imgEdit.setAttribute("onclick", "produto.preparaEdicao("+JSON.stringify(this.arrayProduto[i])+")")
             imgDelet.setAttribute("onclick", "produto.deletar("+ this.arrayProduto[i].id +")")
 
@@ -92,7 +92,7 @@ class Produto {
     }
 
 
-    //FUNÇÃO ADICIONAR É RESPONSALVEL POR FAZER PUSH PARA 'arrayProduto' SALVANDO TODOS PRODUTOS NUM ARRAY
+    //FUNÇÃO RESPONSAVEL POR FAZER PUSH PARA 'arrayProduto' SALVANDO TODOS PRODUTOS NUM ARRAY
     adicinar(produto){
         produto.preco = parseFloat(produto.produto)
        this.arrayProduto.push(produto) 
@@ -110,7 +110,7 @@ class Produto {
     }
 }
     preparaEdicao(dados){
-        //ENVIA ID PARA EDITID DEUXAR DE SER NULL
+        //ENVIA ID PARA EDITID SER NULL
         this.editId = dados.id
         //PEGA OS VALORES DOS INPUTS E JOGA NOVAMENTE PARA EDIÇÃO
         document.getElementById('produto').value = dados.nome
@@ -120,10 +120,10 @@ class Produto {
         document.getElementById('btn').innerText = 'Atualizar'
     }
 
-    //FUNÇÃO RESPONSALVEL POR PEGAR DADOS DOS INPUTS    
+    //FUNÇÃO RESPONSAVEL POR PEGAR DADOS DOS INPUTS    
     captarDados() {
 
-        //VARIAVEL OBJETO RESPONSALVEL POR ARMAZENAR DADOS VINDO DO RETORNO   
+        //VARIAVEL OBJETO RESPONSAVEL POR ARMAZENAR DADOS VINDO DO RETORNO   
         let produto = {}
 
         produto.id = this.id;
@@ -135,7 +135,7 @@ class Produto {
     };
 
 
-    //FUNÇÃO  RESPONSALVEL POR VALIDAR CAMPOS DOS INPUTS
+    //FUNÇÃO  RESPONSAVEL POR VALIDAR CAMPOS DOS INPUTS
 
     validaInput(produto) {
 
@@ -152,7 +152,7 @@ class Produto {
             msg += '-Informe o valor do produto \n';
         }
 
-        //SE A MENSAGEM TIVER CONTEUDO É PORQUE O USUARIO NAO DITITOU NADA ''
+        //SE A MENSAGEM CONTEUDO É PORQUE O USUARIO NAO DIGITOU NADA ''
         if (msg != '') {
             alert(msg)
 
@@ -164,7 +164,7 @@ class Produto {
 
 
     }
-    //FUNÇÃO RESPONSALVEL LIMPAR OS INPUTS
+    //FUNÇÃO RESPONSAVEL LIMPAR OS INPUTS
     cancelar() {
 
         //LIMPA OS CAMPOS DOS INPUTS
@@ -180,13 +180,13 @@ class Produto {
     };
 
 
-    //FUNÇÃO RESPONSALVEL DELETAR PRODUTOS
+    //FUNÇÃO RESPONSAVEL DELETAR PRODUTOS
     deletar(id){
         //IF PARA ALERTAR O USUARIO CANCELAR O DELETE 
         if(confirm('voce tem certeza que deseja deletera o do ID' + id)){
             let tbody = document.querySelector('#tbody');
 
-            //FOR QUE EXECUTA O DELEÇÃO
+            //FOR QUE EXECUTA DELETE
             for(let i = 0;i < this.arrayProduto.length; i++){
                 if(this.arrayProduto[i].id == id){
                  // dois valores 
