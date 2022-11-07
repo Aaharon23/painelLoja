@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="BRA-pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Minha Loja</title>
+</head>
+
+<body id="body">
+
+    <header>
+        <h1>Painel 1.0</h1>
+
+    </header>
+
+    <main>
+        <div class="title">
+            <h2>Produto</h2>
+            <span>Lista de produtos da minha loja</span>
+        </div>
+
+        <div class="card">
+
+            <div id="lineIput">
+                <label>Produto</label>
+                <input id="produto" type="text" placeholder="Nome do produto">
+            </div>
+
+            <div id="lineIput">
+                <label>valor</label>
+                <input id="preco" type="number" placeholder="Valor do produto">
+            </div>
+            <button id="btn">Salvar</button>
+            <button id="btn2">Cancelar</button>
+        </div>
+
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th class="center">ID</th>
+                    <th class="center">Produto</th>
+                    <th class="center">Valor</th>
+                    <th>Açoes</th>
+                </thead>
+
+                <tbody id="tbody">
+     
+                </tbody>
+            </table>
+        </div>
+
+
+
+    </main>
+
+
+    <script src="https://kit.fontawesome.com/c80a6716ad.js" crossorigin="anonymous"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
